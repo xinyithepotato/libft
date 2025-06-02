@@ -11,15 +11,12 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
-	int	len;
+	size_t	i;
 
 	i = 0;
-	len = ft_strlen(src);
 	if (dstsize > 0)
 	{
 		while (i < (dstsize - 1) && src[i])
@@ -29,7 +26,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		dst[i] = '\0';
 	}
-	return (len);
+	//original strlcpy keeps counting even if stopped copying
+	while (src[i])
+		i++;
+	return (i);
 }
 
 /*#include <string.h>
