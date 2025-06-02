@@ -43,6 +43,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (dst_len + src_len);
 }
 
+#include <stdio.h>
+#include <string.h>
 int main(void)
 {
     char buffer[20];
@@ -50,17 +52,20 @@ int main(void)
     // Test 1
     buffer[0] = '\0';
     printf("Return: %zu, Result: \"%s\"\n", ft_strlcat(buffer, "Hello", sizeof(buffer)), buffer);
-
+	printf("Return: %zu, Result: \"%s\"\n", strlcat(buffer, "Hello", sizeof(buffer)), buffer);
     // Test 2
     printf("Return: %zu, Result: \"%s\"\n", ft_strlcat(buffer, " World", sizeof(buffer)), buffer);
+	printf("Return: %zu, Result: \"%s\"\n", strlcat(buffer, " World", sizeof(buffer)), buffer);
 
     // Test 3 (buffer too small)
     char smallbuf[10] = "Hello";
     printf("Return: %zu, Result: \"%s\"\n", ft_strlcat(smallbuf, " World", sizeof(smallbuf)), smallbuf);
+	printf("Return: %zu, Result: \"%s\"\n", strlcat(smallbuf, " World", sizeof(smallbuf)), smallbuf);
 
     // Test 4 (zero size)
     char zerobuf[10] = "Hello";
     printf("Return: %zu, Result: \"%s\"\n", ft_strlcat(zerobuf, " World", 0), zerobuf);
+	printf("Return: %zu, Result: \"%s\"\n", strlcat(zerobuf, " World", 0), zerobuf);
 
     return 0;
 }
