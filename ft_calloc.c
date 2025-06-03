@@ -19,6 +19,8 @@ void	*ft_calloc(size_t nitems, size_t size)
 	unsigned char	*ptr;
 
 	total = nitems * size;
+	if (nitems == 0 || size == 0)
+		return (malloc(0));
 	ptr = malloc(total);
 	if (!ptr)
 		return (0);
