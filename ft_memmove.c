@@ -18,8 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char		*d;
 	const unsigned char	*s;
 
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
+	d = dst;
+	s = src;
 	if (!dst && !src)
 		return (0);
 	if (d < s)
@@ -43,14 +43,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 #include <stdio.h>
 int	main(void)
 {
-	char str1[] = "Learningisfun";
-	char str2[] = "Learningisfun";
+	char str1[22] = "Learningisfun";
+	char str2[22] = "Learningisfun";
 
 	printf("Original string : %s\n", str1);
 
-	memmove(str1, str1 + 8, 7);
+	memmove(str1, str1, 7);
 	printf("memmove overlap : %s\n", str1);
 
-	ft_memmove(str2, str2 + 8, 7);
+	ft_memmove(str2, str2, 7);
 	printf("ft_memmove      : %s\n", str2);
 }*/
