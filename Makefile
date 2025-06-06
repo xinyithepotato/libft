@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/24 18:01:21 by xinlim            #+#    #+#              #
-#    Updated: 2025/06/06 14:41:27 by xinlim           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libft.a
 
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
@@ -31,6 +19,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)

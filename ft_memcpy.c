@@ -6,11 +6,11 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 22:43:37 by xinlim            #+#    #+#             */
-/*   Updated: 2025/05/25 23:29:44 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 17:04:58 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

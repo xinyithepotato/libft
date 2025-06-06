@@ -6,46 +6,27 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:39:38 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/06 00:18:45 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 17:04:58 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*joined;
-	int		i;
-	int		j;
+	size_t	len_s1;
+	size_t	len_s2;
 
 	if (!s1 || !s2)
 		return (0);
-	joined = (char *)malloc(ft_strlen(s1) + ft_strlen(s2));
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	joined = ft_calloc(len_s1 + len_s2, sizeof(char));
 	if (!joined)
 		return (0);
-	i = 0;
-	while (s1[i])
-	{
-		joined[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (s2[j])
-	{
-		joined[i + j] = s2[j];
-		j++;
-	}
-	joined[i + j] = '\0';
+	ft_memmove(joined, s1, len_s1);
+	ft_memmove(joined + len_s1, s2, len_s2);
 	return (joined);
 }
 

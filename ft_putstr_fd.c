@@ -6,11 +6,11 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 19:59:57 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/06 00:12:18 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 17:04:58 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

@@ -6,11 +6,11 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 00:00:01 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/06 15:15:20 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 17:04:58 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 19:53:14 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/06 00:28:11 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 17:04:58 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	count_digits(int n)
 {
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 	unsigned int	num;
 
 	len = count_digits(n);
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	str = ft_calloc(len + 1, sizeof(char));
 	if (!str)
 		return (0);
 	str[len] = '\0';
