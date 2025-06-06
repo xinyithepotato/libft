@@ -6,7 +6,7 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 00:00:01 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/03 00:00:01 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 15:15:20 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char	*ptr;
+	const unsigned char		*ptr;
 	size_t					i;
 
-	ptr = s;
+	ptr = (const unsigned char *)s;
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
-		if (ptr[i] == c)
+		if (ptr[i] == (unsigned char)c)
 			return ((void *)(ptr + i));
 		i++;
 	}
 	return (0);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 int main(void)
 {
@@ -49,4 +49,4 @@ int main(void)
 		printf("Not found using memchr.\n");
 
 	return 0;
-}
+}*/

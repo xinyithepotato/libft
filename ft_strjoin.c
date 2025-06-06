@@ -6,7 +6,7 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:39:38 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/04 13:39:38 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 00:18:45 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i = 0;
+	size_t	i;
+
+	i = 0;
 	while (s[i])
 		i++;
 	return (i);
@@ -23,9 +25,9 @@ size_t	ft_strlen(const char *s)
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*joined;
-	int i;
-	int	j;
-	
+	int		i;
+	int		j;
+
 	if (!s1 || !s2)
 		return (0);
 	joined = (char *)malloc(ft_strlen(s1) + ft_strlen(s2));

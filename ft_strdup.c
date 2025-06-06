@@ -6,15 +6,16 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 01:19:29 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/04 01:19:29 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 14:47:24 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 
 char	*ft_strdup(const char *str1)
 {
-    size_t	i;
+	size_t	i;
 	char	*dup;
 
 	i = 0;

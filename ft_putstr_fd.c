@@ -6,7 +6,7 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 19:59:57 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/04 19:59:57 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 00:12:18 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	if (!s)
-		return;
+		return ;
 	i = 0;
 	while (s[i])
 	{

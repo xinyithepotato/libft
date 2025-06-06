@@ -6,7 +6,7 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 13:04:48 by xinlim            #+#    #+#             */
-/*   Updated: 2025/05/26 13:48:15 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 00:10:19 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		dst[i] = '\0';
 	}
-	//original strlcpy keeps counting even if stopped copying
 	while (src[i])
 		i++;
 	return (i);

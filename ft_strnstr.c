@@ -6,39 +6,37 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 00:44:25 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/04 00:44:25 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 00:09:25 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char    *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-    size_t  i;
-    size_t  j;
+	size_t	i;
+	size_t	j;
 
-    //if little is an empty string, big is returned
-    i = 0;
-    if (!*needle)
-        return ((char *)haystack);
-    while (haystack[i] && i < len)
-    {
-        j = 0;
-        while (needle[j] && haystack[i+j] == needle[j] && (i + j) < len)
-            j++;
-        if (!needle[j])
-            //first character of first occurence of little is returned
-            return ((char *)&haystack[i]);
-        i++;
-    }
-    //if little occurs nowhere in big
-    return (0);
+	i = 0;
+	if (!*needle)
+		return ((char *)haystack);
+	while (haystack[i] && i < len)
+	{
+		j = 0;
+		while (needle[j] && (haystack[i + j] == needle[j]) && ((i + j) < len))
+			j++;
+		if (!needle[j])
+			return ((char *)&haystack[i]);
+		i++;
+	}
+	return (0);
 }
 
 /*#include <stdio.h>
 #include <string.h>
 int main(void)
-{
+{	
+	
     const char *haystack1 = "Hello, world!";
     const char *needle1 = "world";
     size_t len1 = strlen(haystack1); // Search the whole string
@@ -92,26 +90,10 @@ int main(void)
     printf("strnstr:    %s\n", result_std ? result_std : "NULL");
     printf("Match: %s\n\n", (result_ft == result_std) ? "PASSED" : "FAILED");
 
-    // Test Case 3: No match
-    result_ft = ft_strnstr(haystack3, needle3, len3);
-    result_std = strnstr(haystack3, needle3, len3);
-    printf("Test 3: '%s' in '%s' (len %zu)\n", needle3, haystack3, len3);
-    printf("ft_strnstr: %s\n", result_ft ? result_ft : "NULL");
-    printf("strnstr:    %s\n", result_std ? result_std : "NULL");
-    printf("Match: %s\n\n", (result_ft == result_std) ? "PASSED" : "FAILED");
-
     // Test Case 4: Needle longer than haystack
     result_ft = ft_strnstr(haystack4, needle4, len4);
     result_std = strnstr(haystack4, needle4, len4);
     printf("Test 4: '%s' in '%s' (len %zu)\n", needle4, haystack4, len4);
-    printf("ft_strnstr: %s\n", result_ft ? result_ft : "NULL");
-    printf("strnstr:    %s\n", result_std ? result_std : "NULL");
-    printf("Match: %s\n\n", (result_ft == result_std) ? "PASSED" : "FAILED");
-
-    // Test Case 5: Empty needle
-    result_ft = ft_strnstr(haystack5, needle5, len5);
-    result_std = strnstr(haystack5, needle5, len5);
-    printf("Test 5: Empty needle in '%s' (len %zu)\n", haystack5, len5);
     printf("ft_strnstr: %s\n", result_ft ? result_ft : "NULL");
     printf("strnstr:    %s\n", result_std ? result_std : "NULL");
     printf("Match: %s\n\n", (result_ft == result_std) ? "PASSED" : "FAILED");
@@ -139,7 +121,6 @@ int main(void)
     printf("ft_strnstr: %s\n", result_ft ? result_ft : "NULL");
     printf("strnstr:    %s\n", result_std ? result_std : "NULL");
     printf("Match: %s\n\n", (result_ft == result_std) ? "PASSED" : "FAILED");
-
 
     return 0;
 }*/

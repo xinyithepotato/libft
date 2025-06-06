@@ -6,23 +6,31 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 00:59:52 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/04 00:59:52 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 15:41:09 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	check_result(int sign, unsigned long long result)
+{
+	if (sign == 1 && result > 2147483647)
+		return (-1);
+	if (sign == -1 && result > 2147483648UL)
+		return (0);
+	return (1);
+}
+
 int	ft_atoi(const char *str)
 {
-    int					i;
-    int					sign;
-    unsigned long	result;
+	int					i;
+	int					sign;
+	int					check;
+	unsigned long long	result;
 
-    i = 0;
-    sign = 1;
-    result = 0;
-    while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-	{
+	i = 0;
+	sign = 1;
+	result = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
-	}
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
@@ -32,13 +40,12 @@ int	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
-		if (sign == 1 && result > 2147483647)
-			return (2147483647);
-		if (sign == -1 && result > 2147483648)
-			return (-2147483648);
+		check = check_result(sign, result);
+		if (check != 1)
+			return (check);
 		i++;
 	}
-	return (result * sign);
+	return ((int)(result * sign));
 }
 
 /*#include <stdio.h>  

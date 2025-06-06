@@ -6,20 +6,16 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 19:53:14 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/04 19:53:14 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 00:28:11 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-//to count amount of bytes needed to store in memory
 static int	count_digits(int n)
 {
 	int	count;
 
-	//start from 1 because:
-	//0 needs to be allocated space too
-	//negative values have '-' that needs to be allocated space
 	if (n <= 0)
 		count = 1;
 	else

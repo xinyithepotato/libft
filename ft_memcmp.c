@@ -6,7 +6,7 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 00:24:26 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/04 00:24:26 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 00:17:24 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char *p1;
-	const unsigned char *p2;
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 	size_t				i;
 
 	p1 = s1;

@@ -6,7 +6,7 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:51:22 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/04 13:51:22 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 00:26:51 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i = 0;
+	size_t	i;
+
+	i = 0;
 	while (s[i])
 		i++;
 	return (i);
 }
 
-//to match characters and see if its in set
 int	in_set(char c, const char *set)
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
 	while (set[i])
 	{
@@ -45,11 +46,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
-	//skip over leading characters in s1 found in set
 	while (s1[start] && in_set(s1[start], set))
 		start++;
 	end = ft_strlen(s1);
-	//trim characters at the end of s1 found in set
 	while (end > start && in_set(s1[end - 1], set))
 		end--;
 	trimmed = (char *)malloc(end - start + 1);

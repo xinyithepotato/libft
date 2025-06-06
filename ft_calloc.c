@@ -6,29 +6,42 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 01:14:52 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/04 01:14:52 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 16:16:11 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-    size_t	total;
-	size_t	i;
-	unsigned char	*ptr;
+	void	*ptr;
 
-	total = nitems * size;
-	if (nitems == 0 || size == 0)
-		return (malloc(0));
-	ptr = malloc(total);
+	if (size && count > SIZE_MAX / size)
+		return (NULL);
+	ptr = malloc(count * size);
 	if (!ptr)
-		return (0);
-	i = 0;
-	while (i < total)
-	{
-		ptr[i] = 0;
-		i++;
-	}
+		return (NULL);
+	ft_bzero(ptr, count * size);
 	return (ptr);
 }
+
+/*#include <stdio.h>
+int main(void)
+{
+	int *arr = (int *)ft_calloc(10, sizeof(int));
+	if (!arr)
+	{
+		printf("Allocation failed\n");
+		return 1;
+	}
+
+	for (int i = 0; i < 10; i++)
+		printf("%d ", arr[i]); // Should print 10 zeros
+	printf("\n");
+
+	free(arr);  // Important: free allocated memory to avoid leaks
+
+	return 0;
+}
+*/

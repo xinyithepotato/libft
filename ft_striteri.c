@@ -1,52 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 22:12:29 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/06 14:43:16 by xinlim           ###   ########.fr       */
+/*   Created: 2025/06/05 23:36:51 by xinlim            #+#    #+#             */
+/*   Updated: 2025/06/06 00:24:05 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	*ft_memset(void *ptr, int x, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t				i;
-	unsigned char		*s;
+	unsigned int	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
-	s = (unsigned char *)ptr;
-	while (i < n)
+	while (s[i])
 	{
-		s[i] = (unsigned char)x;
+		f(i, &s[i]);
 		i++;
 	}
-	return (ptr);
 }
 
-/*#include <stdio.h>
-#include <string.h>
-int	main()
+/*void	iteri_func(unsigned int i, char *c)
 {
-	char a[10];
-	char b[10];
-	int i = 0;
-	int j = 0;
-	
-	memset(b, 1, sizeof(b));
-	while (j < sizeof(b))
-	{
-		printf("%d ", b[j]);
-		j++;
-	}
-	printf("\n");
-	ft_memset(a, 1, sizeof(a));
-	while (i < sizeof(a))
-	{
-		printf("%d ", a[i]);
-		i++;
-	}
+	if (i % 2 != 0 && *c >= 'a' && *c <= 'z')
+		*c = *c - 32; // Uppercase if at odd index
+}*/
+
+/*#include <stdio.h>
+int main()
+{
+	char	iterable[] = "hello42";
+	printf("Before ft_striteri: %s\n", iterable);
+	ft_striteri(iterable, iteri_func);
+	printf("After  ft_striteri: %s\n", iterable);
 }*/

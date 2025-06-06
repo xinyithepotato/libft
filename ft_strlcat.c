@@ -6,7 +6,7 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 22:08:36 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/02 22:08:36 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 15:16:41 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,29 @@ size_t	ft_strlen(const char *s)
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
+	size_t	j;
 	size_t	src_len;
 	size_t	dst_len;
 
+	dst_len = 0;
+	while (dst_len < dstsize && dst[dst_len])
+		dst_len++;
 	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dst);
-	i = 0;
-	if (dstsize > 0)
+	if (dst_len >= dstsize)
+		return (src_len + dstsize);
+	i = dst_len;
+	j = 0;
+	while (src[j] && (i + 1) < dstsize)
 	{
-		while (src[i] && (dst_len + i) < (dstsize - 1))
-		{
-			dst[dst_len + i] = src[i];
-			i++;
-		}
-		dst[dst_len + i] = '\0';
+		dst[i] = src[j];
+		i++;
+		j++;
 	}
+	dst[i] = '\0';
 	return (dst_len + src_len);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 int main(void)
 {
@@ -51,21 +55,29 @@ int main(void)
 
     // Test 1
     buffer[0] = '\0';
-    printf("Return: %zu, Result: \"%s\"\n", ft_strlcat(buffer, "Hello", sizeof(buffer)), buffer);
-	printf("Return: %zu, Result: \"%s\"\n", strlcat(buffer, "Hello", sizeof(buffer)), buffer);
+    printf("Return: %zu, Result: \"%s\"\n", f
+		t_strlcat(buffer, "Hello", sizeof(buffer)), buffer);
+	printf("Return: %zu, Result: \"%s\"\n", 
+		strlcat(buffer, "Hello", sizeof(buffer)), buffer);
     // Test 2
-    printf("Return: %zu, Result: \"%s\"\n", ft_strlcat(buffer, " World", sizeof(buffer)), buffer);
-	printf("Return: %zu, Result: \"%s\"\n", strlcat(buffer, " World", sizeof(buffer)), buffer);
+    printf("Return: %zu, Result: \"%s\"\n", 
+		ft_strlcat(buffer, " World", sizeof(buffer)), buffer);
+	printf("Return: %zu, Result: \"%s\"\n", 
+		strlcat(buffer, " World", sizeof(buffer)), buffer);
 
     // Test 3 (buffer too small)
     char smallbuf[10] = "Hello";
-    printf("Return: %zu, Result: \"%s\"\n", ft_strlcat(smallbuf, " World", sizeof(smallbuf)), smallbuf);
-	printf("Return: %zu, Result: \"%s\"\n", strlcat(smallbuf, " World", sizeof(smallbuf)), smallbuf);
+    printf("Return: %zu, Result: \"%s\"\n", 
+		ft_strlcat(smallbuf, " World", sizeof(smallbuf)), smallbuf);
+	printf("Return: %zu, Result: \"%s\"\n", 
+		strlcat(smallbuf, " World", sizeof(smallbuf)), smallbuf);
 
     // Test 4 (zero size)
     char zerobuf[10] = "Hello";
-    printf("Return: %zu, Result: \"%s\"\n", ft_strlcat(zerobuf, " World", 0), zerobuf);
-	printf("Return: %zu, Result: \"%s\"\n", strlcat(zerobuf, " World", 0), zerobuf);
+    printf("Return: %zu, Result: \"%s\"\n", 
+		ft_strlcat(zerobuf, " World", 0), zerobuf);
+	printf("Return: %zu, Result: \"%s\"\n", 
+		strlcat(zerobuf, " World", 0), zerobuf);
 
     return 0;
-}
+}*/

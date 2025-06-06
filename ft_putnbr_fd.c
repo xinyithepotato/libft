@@ -6,7 +6,7 @@
 /*   By: xinlim <xinlim@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:07:50 by xinlim            #+#    #+#             */
-/*   Updated: 2025/06/04 20:07:50 by xinlim           ###   ########.fr       */
+/*   Updated: 2025/06/06 00:11:37 by xinlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	ft_putchar_fd(char c, int fd)
 }
 
 void	ft_putnbr_fd(int n, int fd)
-{   
-    //handle int min
+{
 	if (n == -2147483648)
 	{
 		write(fd, "-2147483648", 11);
@@ -35,12 +34,11 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd((n % 10) + '0', fd);
 }
 
-int main()
+/*int main()
 {
     ft_putnbr_fd(1278346, 1);
     ft_putchar_fd('\n', 1);
     ft_putnbr_fd(156, 1);
     ft_putchar_fd('\n', 1);
     ft_putnbr_fd(-3156, 1);
-}
-
+}*/
